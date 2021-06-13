@@ -7,15 +7,14 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@Override
 	public boolean add(T item) {
 		if (size == items.length) {
-			System.out.println("array overflow");
-			Object[] newObjArray = new Object[size*2];
-			for (int i = 0; i < size; i++) {
-				newObjArray[i] = items[i];				
+			Object[] newObjArray = new Object[size*2]; //Double the size of the new array
+			for (int i = 0; i < size; i++) { 
+				newObjArray[i] = items[i];	//Copy the contents of the old array into the new array			
 			} //end for loop
-			items = newObjArray;
+			items = newObjArray; //Reassign items to point to the new array
 		}
-		items[size] = item;
-		size++;	//increment size index to the next available array entry
+		items[size] = item; //Add the new item into the array
+		size++;	//Increment size index to the next available array entry
 		return true;
 	} //end of add method
 
@@ -32,13 +31,5 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 		return (T) items[index];
 	} //end of get method
-	
-	public void displayItemsArray() {
-		int i = 0;
-		for (Object item : items) {
-			System.out.println("item[" + i +  "]=" + item);
-			i++;
-		}
-	} //end of displayItemsArray method
 	
 } //end of CustomArrayList class

@@ -7,15 +7,12 @@ public class Assignment5App {
 
 	public static void main(String[] args) {
 		CustomList<Integer> numbers = new CustomArrayList<>();
-		Random random = new Random();
-		
+		Random random = new Random(); //generate a range of integers: 0-1000
+
+		/* Load CustomList<Integer>*/
 		for (int i = 0; i < 101; i++) {
-			numbers.add(random.nextInt(UPPER_BOUND));
+			numbers.add(random.nextInt(UPPER_BOUND)); //add 100 Integer in the CustomArrayList
 		}
-		
-//		for (CustomList<Integer> number : numbers) {
-//			
-//		}
 		
 		System.out.println("Display contents of the Custom List");	
 		for (int i = 0; i < numbers.getSize(); i++) {
